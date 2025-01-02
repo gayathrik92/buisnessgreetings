@@ -1,0 +1,35 @@
+name: Example Workflow Using Business Greetings
+
+on:
+  push:
+    branches:
+      - main  # Trigger the action when a push to the main branch occurs
+  pull_request:
+    branches:
+      - main  # Trigger for pull requests targeting the main branch
+
+jobs:
+  greet-job:
+    runs-on: ubuntu-latest  # Choose the OS for the runner
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # Ensure the repository is checked out
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'  # Ensure compatibility with Node.js version 20
+
+      - name: Install dependencies for custom action
+        run: |
+          cd .github/actions/businessgreetings  # Go to the custom action directory
+          npm install  # Install the required dependencies
+
+      - name: Run business greetings action
+        uses: ./github/actions/businessgreetings  # Run your custom action
+        with:
+          name: 'John Doe'  # Input value for the 'name' parameter
+
+      - name: Output greeting timestamp
+        run: echo "Greeting Timestamp: ${{ steps.run-business-greeting.outputs.timestamp }}"  # Access the output timestamp from the action

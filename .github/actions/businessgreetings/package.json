@@ -1,0 +1,26 @@
+{
+  "name": "buisnessgreetings",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gayathrik92/buisnessgreetings.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gayathrik92/buisnessgreetings/issues"
+  },
+  "homepage": "https://github.com/gayathrik92/buisnessgreetings#readme",
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+	"moment": "^2.29.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
